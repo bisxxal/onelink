@@ -1,4 +1,4 @@
-import PublicLinks from '@/components/forms/PublicLinks';
+import PublicLinks, { CopyHandel } from '@/components/forms/PublicLinks';
 import { PageModel } from '@/models/Page'; 
 import { Event } from '@/models/Event'; 
 import { UserModel } from '@/models/User';
@@ -10,6 +10,8 @@ import { redirect } from 'next/navigation';
 
 async function page({params}) {
   const uri = params.uri
+  console.log(process.env.URL+uri);
+  
 
   ConnectDb()
   let page = await PageModel.findOne({ uri }).lean();
@@ -28,10 +30,11 @@ async function page({params}) {
   
   return (
     <div className='userbg w-full min-h-screen relative pb-28 overflow-hidden '>
-     <div  className={` max-lg:h-48 h-60 rounded-b-lg flex justify-center items-center  bg-no-repeat bg-cover bg-center `}
+     <div  className={`  max-lg:h-48 h-60 rounded-b-lg flex justify-center items-center  bg-no-repeat bg-cover bg-center `}
         style={page?.bgType === 'color' ? { backgroundColor: page?.bgColor } : {backgroundImage:`url(${page?.bgImage})`}  }>
+          <CopyHandel url={process.env.URL+uri}/>
      </div>
-    <div className=' max-lg:h-28 max-lg:w-28 w-36 h-36 max-lg:-mt-10 -m-16 border-[4px] border-zinc-300 rounded-full overflow-hidden mx-auto'>
+    <div className=' z-20  max-lg:h-28 max-lg:w-28 w-36 h-36 max-lg:-mt-10 -m-16 border-[4px] border-zinc-300 rounded-full overflow-hidden mx-auto'>
       <img className=' bg-cover h-full w-full' src={user?.image}/>
     </div>
 
