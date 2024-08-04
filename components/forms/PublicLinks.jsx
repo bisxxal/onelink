@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa"; 
-
+import { IoMdShare } from "react-icons/io";
  
 function PublicLinks({page}) {
 
@@ -38,7 +38,7 @@ function PublicLinks({page}) {
 }
 
       
-    const handleCopy = (url) => { 
+   const handleCopy = (url) => { 
         navigator.clipboard.writeText(url).then(() => {
           toast.success('URL copied to clipboard:');
         }).catch(err => {
@@ -94,4 +94,19 @@ function PublicLinks({page}) {
   )
 }
 
+export function CopyHandel({url}){
+  const handleCopy = (url) => { 
+    navigator.clipboard.writeText(url).then(() => {
+      toast.success('URL copied to clipboard:');
+    }).catch(err => {
+       
+    });
+  };
+ 
+  
+  return(
+    <div onClick={()=>handleCopy(url)}  className=' pr-1 absolute backdrop-blur bg-[#ffffff46] flex items-center justify-center h-10 w-10 rounded-full right-4 top-6'>
+   <IoMdShare  className=' text-xl text-blue-50'/> </div>
+  )
+}
 export default PublicLinks
