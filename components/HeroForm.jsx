@@ -29,10 +29,11 @@ const router  = useRouter()
     }
   return (
     <form onSubmit={handelSumbit} className=" flex max-lg:flex-col max-lg:gap-5  mt-5 rounded-md w-fit overflow-hidden" >
-        <div className=" text-zinc-500 bg-white h-14 px-4  max-lg:rounded-md "> <span>One.Link/</span>
+        <div className=" text-zinc-500 bg-white h-14 px-4  max-lg:w-[90%] items-center overflow-hidden  max-lg:flex max-lg:rounded-md "> 
+          <span>One.Link/</span>
         <input className=" pr-2 h-full border-none outline-none  " type="text" placeholder="UserName" />
         </div>
-        <button type='sumbit' className="max-lg:rounded-md bg-blue-500 max-lg:h-14 px-3 ">Get For free</button>
+        <button type='sumbit' className="max-lg:rounded-md bg-blue-500 max-lg:w-[90%] max-lg:h-14 px-3 ">Get For free</button>
     </form>
   )
 }

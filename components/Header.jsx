@@ -22,7 +22,7 @@ import LogOut from './buttons/LogOut';
 
             <LogOut/>
             </> :<>
-            <Link href={'/signin'} className='text-sm bg-gray-300 font-medium px-5 py-2 rounded-lg'>Login</Link>
+            <Link href={'/signin'} className='text-sm bg-gray-100 font-medium px-5 py-2 rounded-lg'>Login</Link>
             <Link href={'/signin'} className='text-sm bg-[#1E2330] px-5 py-2 rounded-full text-white'>Sign up free</Link>
             
             </>
